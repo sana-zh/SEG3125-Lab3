@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+  
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <link href="styles/lab3.css" rel="stylesheet" type="text/css">
+  <! From https://www.w3schools.com/w3css/default.asp>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+</head>
+
+<body>
+
+<h1>
+  PriceCo Grocery Store
+</h1>
+
+<button class="accordion" onclick="populateListProductChoices(this.id, 'displayProduct')">1. Client</button>
+<div class="panel">
+  <h3>Client Information</h3>
+  <p>Tell us a bit about you.</p>
+	Choose any applicable dietary preferences: <br />
+	<div>
+	  <input class="vegetarianCheckbox" type="checkbox" id="Vegetarian" name="Vegetarian" onclick="populateListProductChoices(this.id, 'displayProduct')">
+	  <label for="Vegetarian">Vegetarian</label>
+	</div>
+
+	<div>
+	  <input class="glutenFreeCheckbox" type="checkbox" id="GlutenFree" name="GlutenFree" onclick="populateListProductChoices(this.id, 'displayProduct')">
+	  <label for="GlutenFree">Gluten Free</label>
+	</div>
+	
+	<div>
+	  <input class="organicCheckbox" type="checkbox" id="Organic" name="Organic" onclick="populateListProductChoices(this.id, 'displayProduct')">
+	  <label for="Organic">Organic</label>
+	</div>
+	
+	<div>
+	  <input class="noneCheckbox" type="checkbox" id="None" name="None" onclick="populateListProductChoices(this.id, 'displayProduct')">
+	  <label for="None">None</label>
+	</div>
+</div>
+
+<button class="accordion" onclick="populateListProductChoices(this.id, 'displayProduct')">2. Products</button>
+<div class="panel">
+	<div class="w3-bar w3-black">
+	  <button class="w3-bar-item w3-button" onclick="openGroup('fruitsvegetables')">Fruits and Vegetables</button>
+	  <button class="w3-bar-item w3-button" onclick="openGroup('meat')">Meat</button>
+	  <button class="w3-bar-item w3-button" onclick="openGroup('grains')">Grains</button>
+	  <button class="w3-bar-item w3-button" onclick="openGroup('dairy')">Dairy</button>
+	  <button class="w3-bar-item w3-button" onclick="openGroup('frozen')">Frozen Food</button>
+	  <button class="w3-bar-item w3-button" onclick="openGroup('sweets')">Desserts</button>
+	</div>
+	<div id="fruitsvegetables" class="category">
+		<h2>Fruits and Vegetables</h2>
+		<h3>Your targeted products</h3>
+  <p>We preselected products based on your chosen preferences.</p>
+	 Choose items to buy:
+	 <div id="fruitsvegetables_displayProduct"></div>
+	</div>
+
+	<div id="meat" class="category" style="display:none">
+	  <h2>Meat</h2>
+	  <h3>Your targeted products</h3>
+  <p>We preselected products based on your chosen preferences.</p>
+	 Choose items to buy:
+	 <div id="meat_displayProduct"></div>
+	</div>
+
+	<div id="grains" class="category" style="display:none">
+	  <h2>Grains</h2>
+	  <h3>Your targeted products</h3>
+  <p>We preselected products based on your chosen preferences.</p>
+	 Choose items to buy:
+	 <div id="grains_displayProduct"></div>
+	</div>
+	<div id="dairy" class="category" style="display:none">
+		<h2>Dairy</h2>
+		<h3>Your targeted products</h3>
+  <p>We preselected products based on your chosen preferences.</p>
+	 Choose items to buy:
+	 <div id="dairy_displayProduct"></div>
+	</div>
+
+	<div id="frozen" class="category" style="display:none">
+	  <h2>Frozen Foods</h2>
+	  <h3>Your targeted products</h3>
+  <p>We preselected products based on your chosen preferences.</p>
+	 Choose items to buy:
+	 <div id="frozen_displayProduct"></div>
+	</div>
+
+	<div id="sweets" class="category" style="display:none">
+	  <h2>Desserts</h2>
+	  <h3>Your targeted products</h3>
+  <p>We preselected products based on your chosen preferences.</p>
+	 Choose items to buy:
+	 <div id="sweets_displayProduct"></div>
+	</div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<button class="accordion">3. Cart</button>
+<div class="panel">
+  <h3>Cart</h3>
+  <p>Here are your selected items.</p>
+  <div id="displayCart"></div>
+</div>
+
+<footer>
+  <div class = "footer">
+    <p>Website designed by Sana Zahid 300014889</p>
+  </div>
+</footer> 
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
